@@ -18,39 +18,38 @@
 
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 
-const { intentWelcome } = require('./intents/welcome-intent');
-const { intentQuit } = require('./intents/quit-intent');
+const { intentWelcome, intentQuit } = require('./intents/welcome-quit-intent');
+const { intentDefault, intentUnknown } = require('./intents/default-unknown-intent');
 const { intentPainIntensity } = require('./intents/pain-intensity-intent');
 const { intentInPainResponse } = require('./intents/in-pain-response-intent');
+
+const { INTENT_ACTIONS } = require('./utils/actions');
 
 exports.backmechanic = functions.https.onRequest((request, response) => {
   console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
   console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
-
-  // An action is a string used to identify what needs to be done in fulfillment
-  let action = (request.body.queryResult.action) ? request.body.queryResult.action : 'default';
-
   console.log('Dialogflow response:' + response);
+
+  let action = (request.body.queryResult.action) ? request.body.queryResult.action : 'default';
   console.log('Dialogflow action: ' + action);
 
   const actionHandlers = {
-    'input.welcome': intentWelcome,
+    [INTENT_ACTIONS.WELCOME_ACTION]: intentWelcome,
 
-    'input.quit': intentQuit,
+    [INTENT_ACTIONS.QUIT_ACTION]: intentQuit,
 
-    'input.ask.for.pain.intensity': intentPainIntensity,
+    [INTENT_ACTIONS.PAIN_INTENSITY_ACTION]: intentPainIntensity,
 
-    'input.stomach.ground.test': intentInPainResponse
+    [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_ACTION]: intentInPainResponse,
+
+    [INTENT_ACTIONS.DEFAULT_ACTION]: intentDefault,
+
+    [INTENT_ACTIONS.UNKNOWN_ACTION]: intentUnknown
   };
 
   console.log('Dialogflow action handlers', actionHandlers);
-
-  // If undefined or unknown action use the default handler
-  // if (!actionHandlers[action]) {
-  //   action = 'default';
-  // }
+  console.log('Action Handlers Intent: ' + actionHandlers[action]);
 
   // Run the proper handler function to handle the request from Dialogflow
-  console.log('Action Handlers Intent: ' + actionHandlers[action]);
   actionHandlers[action]({request, response});
 });

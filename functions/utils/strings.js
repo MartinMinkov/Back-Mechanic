@@ -1,4 +1,4 @@
-const general = {
+const GENERAL = {
   GREETING: 'Welcome to Back Mechanic, the step by step McGill Method to fix back pain.  This app is intended ' +
     'for informational and educational purposes only. Are you currently experiencing back pain?',
 
@@ -7,10 +7,14 @@ const general = {
 
   PAIN_DECREASE_REQUEST: 'Have you noticed your pain levels decrease?',
 
-  QUIT: 'Thank you for using Back Mechanic. See you next time and pain free!'
+  QUIT: 'Thank you for using Back Mechanic. See you next time and pain free!',
+
+  DEFAULT: 'This message is from the default response handler',
+
+  UNKNOWN: 'I\'m having trouble, can you try that again?'
 };
 
-const InPainResponse = {
+const IN_PAIN_RESPONSE = {
   STOMACH_GROUND_TEST_REQUEST: 'we will reassess that number after this test. Our starting position will be laying ' +
     'on the ground on our stomach as displayed in picture 1. This may be uncomfortable at first but allow yourself 30 ' +
     'seconds to ease into it. Say continue once you’re laying down.',
@@ -31,6 +35,6 @@ const InPainResponse = {
 };
 
 module.exports = {
-  general,
-  InPainResponse
+  GENERAL,
+  IN_PAIN_RESPONSE
 };
