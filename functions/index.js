@@ -1,4 +1,4 @@
-// Copyright 2016, Google, Inc.
+// Copyright 2017, Google, Inc.
 // Licensed under the Apache License, Version 2.0 (the 'License');
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -11,45 +11,46 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Dialogflow fulfillment getting started guide:
+// https://dialogflow.com/docs/how-tos/getting-started-fulfillment
+
 'use strict';
 
-process.env.DEBUG = 'actions-on-google:*';
-const {DialogflowApp} = require('actions-on-google');
-const functions = require('firebase-functions');
-const painIntensityRequest = require('./intents/pain-intensity-intent');
-const inPainResponse = require('./intents/in-pain-response-intent');
-const quit = require('./intents/quit-intent');
+const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 
-const strings = require('./strings');
-
-function createActionMap () {
-  let actionMap = new Map();
-  for (let i = 0; i < arguments.length; i++) {
-    for (let key in arguments[i]) {
-      actionMap.set(key, arguments[i][key]);
-    }
-  }
-  return actionMap;
-}
+const { intentWelcome } = require('./intents/welcome-intent');
+const { intentQuit } = require('./intents/quit-intent');
+const { intentPainIntensity } = require('./intents/pain-intensity-intent');
+const { intentInPainResponse } = require('./intents/in-pain-response-intent');
 
 exports.backmechanic = functions.https.onRequest((request, response) => {
-  const app = new DialogflowApp({request, response});
-  console.log('Request headers: ' + JSON.stringify(request.headers));
-  console.log('Request body: ' + JSON.stringify(request.body));
+  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
+  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
-  const welcome = {
-    'input.welcome': (app) => {
-      app.ask(strings.general.GREETING);
-    }
+  // An action is a string used to identify what needs to be done in fulfillment
+  let action = (request.body.queryResult.action) ? request.body.queryResult.action : 'default';
+
+  console.log('Dialogflow response:' + response);
+  console.log('Dialogflow action: ' + action);
+
+  const actionHandlers = {
+    'input.welcome': intentWelcome,
+
+    'input.quit': intentQuit,
+
+    'input.ask.for.pain.intensity': intentPainIntensity,
+
+    'input.stomach.ground.test': intentInPainResponse
   };
 
-  const actionMap = createActionMap(
-            welcome,
-            painIntensityRequest,
-            inPainResponse,
-            quit
-        );
+  console.log('Dialogflow action handlers', actionHandlers);
 
-  app.handleRequest(actionMap);
-}
-);
+  // If undefined or unknown action use the default handler
+  // if (!actionHandlers[action]) {
+  //   action = 'default';
+  // }
+
+  // Run the proper handler function to handle the request from Dialogflow
+  console.log('Action Handlers Intent: ' + actionHandlers[action]);
+  actionHandlers[action]({request, response});
+});

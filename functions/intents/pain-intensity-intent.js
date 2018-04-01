@@ -1,16 +1,10 @@
 const strings = require('../strings');
+const { sendResponse } = require('../utils');
+
+function intentPainIntensity (args) {
+  sendResponse(strings.general.PAIN_REQUEST, args.response);
+}
 
 module.exports = {
-
-  'input.ask.for.pain.intensity': (app) => {
-    app.ask(strings.general.PAIN_REQUEST);
-  },
-
-  'ask.for.pain.intensity.confirmation': (app) => {
-    if (app.getUserConfirmation()) {
-      app.ask('Yes!');
-    } else {
-      app.ask('Bye!');
-    }
-  }
+  intentPainIntensity
 };

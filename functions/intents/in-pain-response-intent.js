@@ -1,16 +1,13 @@
 const strings = require('../strings');
+const { sendResponse } = require('../utils');
+
+function intentInPainResponse (args) {
+  const painIntensity = (args.request.body.queryResult.parameters.painintensity)
+    ? args.request.body.queryResult.parameters.painintensity : 0;
+
+  sendResponse(`${painIntensity}, ${strings.InPainResponse.STOMACH_GROUND_TEST_REQUEST}`, args.response);
+}
 
 module.exports = {
-
-  'input.stomach.ground.test': (app) => {
-    app.ask(app.getArgument('pain-intensity') + ', ' + strings.InPainResponse.STOMACH_GROUND_TEST_REQUEST);
-  },
-
-  'input.stomach.ground.test.confirmation': (app) => {
-    if (app.getUserConfirmation()) {
-      app.ask('Yes!');
-    } else {
-      app.ask('Bye!');
-    }
-  }
+  intentInPainResponse
 };

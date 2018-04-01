@@ -1,10 +1,10 @@
 const strings = require('../strings');
 const { sendResponse } = require('../utils');
 
-function intentQuit (args) {
-  sendResponse(strings.general.QUIT, args.response);
+function intentWelcome (args) {
+  sendResponse(strings.general.GREETING, args.response);
 }
 
 module.exports = {
-  intentQuit
+  intentWelcome
 };
