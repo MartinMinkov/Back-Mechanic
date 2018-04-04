@@ -1,10 +1,8 @@
-const strings = require('../utils/strings');
-const { sendResponse } = require('../helpers/utils');
-
-function intentPainIntensity (args) {
-  sendResponse(strings.GENERAL.PAIN_REQUEST, args.response);
-}
+const { GENERAL } = require('../utils/strings');
+const { INTENT_ACTIONS } = require('../utils/actions');
 
 module.exports = {
-  intentPainIntensity
+  [INTENT_ACTIONS.PAIN_INTENSITY_ACTION]: (app) => {
+    app.ask(GENERAL.PAIN_REQUEST);
+  }
 };

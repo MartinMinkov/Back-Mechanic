@@ -19,8 +19,10 @@ const IN_PAIN_RESPONSE = {
     'on the ground on our stomach as displayed in picture 1. This may be uncomfortable at first but allow yourself 30 ' +
     'seconds to ease into it. Say continue once you’re laying down.',
 
-  STOMACH_GROUND_TEST_REQUEST_TIMER_REQUEST: 'Focus on your breath and allow your back to relax into the floor. ' +
-    'A 30 second timer has begun.',
+  STOMACH_GROUND_TEST_REQUEST_TIMER: 'Focus on your breath and allow your back to relax into the floor. ' +
+    'Press the play button to start a 30 second timer.',
+
+  STOMACH_GROUND_TEST_REQUEST_CHECK: 'Have you noticed your pain levels decrease?',
 
   STOMACH_CHIN_GROUND_TEST_REQUEST: 'Continue to lay in this position. You may prop your chin up on your fist as ' +
     'shown in picture 2. If this position is more comfortable, maintain it. Otherwise return to the original position. ' +

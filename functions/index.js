@@ -16,40 +16,36 @@
 
 'use strict';
 
-const functions = require('firebase-functions'); // Cloud Functions for Firebase library
+process.env.DEBUG = 'actions-on-google:*';
+const { DialogflowApp } = require('actions-on-google');
+const functions = require('firebase-functions');
 
-const { intentWelcome, intentQuit } = require('./intents/welcome-quit-intent');
-const { intentDefault, intentUnknown } = require('./intents/default-unknown-intent');
-const { intentPainIntensity } = require('./intents/pain-intensity-intent');
-const { intentInPainResponse } = require('./intents/in-pain-response-intent');
+const intentWelcomeQuit = require('./intents/welcome-quit-intents');
+const intentUnknownDefault = require('./intents/default-unknown-intents');
+const intentPainIntensity = require('./intents/pain-intensity-intent');
+const intentStomachGroundTest = require('./intents/stomach-ground-test-intents');
 
-const { INTENT_ACTIONS } = require('./utils/actions');
+function createActionMap () {
+  let actionMap = new Map();
+  for (let i = 0; i < arguments.length; i++) {
+    for (let key in arguments[i]) {
+      actionMap.set(key, arguments[i][key]);
+    }
+  }
+  return actionMap;
+}
 
 exports.backmechanic = functions.https.onRequest((request, response) => {
-  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
-  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
-  console.log('Dialogflow response:' + response);
+  const app = new DialogflowApp({request, response});
+  console.log('Request headers: ' + JSON.stringify(request.headers));
+  console.log('Request body: ' + JSON.stringify(request.body));
 
-  let action = (request.body.queryResult.action) ? request.body.queryResult.action : 'default';
-  console.log('Dialogflow action: ' + action);
+  const actionMap = createActionMap(
+    intentWelcomeQuit,
+    intentUnknownDefault,
+    intentPainIntensity,
+    intentStomachGroundTest
+  );
 
-  const actionHandlers = {
-    [INTENT_ACTIONS.WELCOME_ACTION]: intentWelcome,
-
-    [INTENT_ACTIONS.QUIT_ACTION]: intentQuit,
-
-    [INTENT_ACTIONS.PAIN_INTENSITY_ACTION]: intentPainIntensity,
-
-    [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_ACTION]: intentInPainResponse,
-
-    [INTENT_ACTIONS.DEFAULT_ACTION]: intentDefault,
-
-    [INTENT_ACTIONS.UNKNOWN_ACTION]: intentUnknown
-  };
-
-  console.log('Dialogflow action handlers', actionHandlers);
-  console.log('Action Handlers Intent: ' + actionHandlers[action]);
-
-  // Run the proper handler function to handle the request from Dialogflow
-  actionHandlers[action]({request, response});
+  app.handleRequest(actionMap);
 });
