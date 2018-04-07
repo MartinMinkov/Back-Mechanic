@@ -23,7 +23,9 @@ const functions = require('firebase-functions');
 const intentWelcomeQuit = require('./intents/welcome-quit-intents');
 const intentUnknownDefault = require('./intents/default-unknown-intents');
 const intentPainIntensity = require('./intents/pain-intensity-intent');
-const intentStomachGroundTest = require('./intents/stomach-ground-test-intents');
+const intentGroundProneTest = require('./intents/ground-prone-test-intents');
+const intentPosturalAssessment = require('./intents/postural-assessment-intents');
+const intentAssessmentResults = require('./intents/assessment-results-intents');
 
 function createActionMap () {
   let actionMap = new Map();
@@ -44,7 +46,9 @@ exports.backmechanic = functions.https.onRequest((request, response) => {
     intentWelcomeQuit,
     intentUnknownDefault,
     intentPainIntensity,
-    intentStomachGroundTest
+    intentGroundProneTest,
+    intentPosturalAssessment,
+    intentAssessmentResults
   );
 
   app.handleRequest(actionMap);
