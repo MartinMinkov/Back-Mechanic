@@ -33,6 +33,14 @@ const INTENT_ACTIONS = {
 
   IN_PAIN_RESPONSE_STANDING_EXTENSION_SIDE_LEFT_RESULTS: 'input.standing.extension.side.left.results',
 
+  NOT_IN_PAIN_RESPONSE_SEATED_COMPRESSION_TEST_REQUEST: 'input.seated.compression.test.request',
+
+  NOT_IN_PAIN_RESPONSE_SEATED_COMPRESSION_TEST_CHAIR_AVAILABLE: 'input.seated.compression.test.chair.available',
+
+  NOT_IN_PAIN_RESPONSE_SEATED_COMPRESSION_TEST_NEUTRAL_SPINE_REQUEST: 'input.seated.compression.test.neutral.spine.request',
+
+  NOT_IN_PAIN_RESPONSE_SEATED_COMPRESSION_TEST_FLEXED_SPINE_REQUEST: 'input.seated.compression.test.flexed.spine.request',
+
   ASSESSMENT_RESULTS_SPINAL_FLEXION: 'input.assessment.spinal.flexion',
 
   ASSESSMENT_RESULTS_FACET_JOINT_INVOLVEMENT: 'input.assessment.facet.joint.involvement',

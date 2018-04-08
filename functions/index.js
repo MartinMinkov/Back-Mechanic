@@ -24,8 +24,9 @@ const intentWelcomeQuit = require('./intents/welcome-quit-intents');
 const intentUnknownDefault = require('./intents/default-unknown-intents');
 const intentPainIntensity = require('./intents/pain-intensity-intent');
 const intentGroundProneTest = require('./intents/ground-prone-test-intents');
-const intentStandingExentionTest = require('./intents/standing-extention-test');
+const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
 const intentPosturalAssessment = require('./intents/postural-assessment-intents');
+const intentSeatedCompressionTest = require('./intents/seated-compression-test-intents');
 const intentAssessmentResults = require('./intents/assessment-results-intents');
 
 function createActionMap () {
@@ -48,8 +49,9 @@ exports.backmechanic = functions.https.onRequest((request, response) => {
     intentUnknownDefault,
     intentPainIntensity,
     intentGroundProneTest,
-    intentStandingExentionTest,
+    intentStandingExtensionTest,
     intentPosturalAssessment,
+    intentSeatedCompressionTest,
     intentAssessmentResults
   );
 

@@ -66,6 +66,22 @@ const IN_PAIN_RESPONSE = {
   'this say show me my results.'
 };
 
+const NOT_IN_PAIN_RESPONSE = {
+  SEATED_COMPRESSION_TEST_REQUEST: 'I am going to guide you through various tests in order to discover your pain ' +
+  'triggers. They are meant to be provocative so that we can find the specific causes of your pain. Do not push ' +
+  'yourself into any uncomfortable pain levels. The first test requires a chair, do you have access to one?',
+
+  SEATED_COMPRESSION_TEST_CHAIR_AVAILABLE: 'Observe the displayed picture. The person on the left is sitting with a ' +
+  '“neutral spine”, the middle is with an “extended spine” and the right is with a “flexed spine” take note of each ' +
+  'position as they will be referred to in the following steps. Say I’m ready to continue.',
+
+  SEATED_COMPRESSION_TEST_CHAIR_NEUTRAL_SPINE_REQUEST: 'Sit with a neutral spine (left), grab the bottom of the chair ' +
+  'and pull yourself down into the chair while maintaining that posture. Does this increase your pain?',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXED_SPINE_REQUEST: 'Now slouch like the person on the right and pull down again. ' +
+  'Does this increase your pain?'
+};
+
 const ASSESSMENT_RESULTS = {
   SPINAL_FLEXION: 'It seems you have pain with spinal flexion. This pain will be worsened with slouching, sitting, ' +
   'bending and activities such as gardening or tying your shoes. The most likely cause is a disc bulge. Laying on your ' +
@@ -81,5 +97,6 @@ const ASSESSMENT_RESULTS = {
 module.exports = {
   GENERAL,
   IN_PAIN_RESPONSE,
+  NOT_IN_PAIN_RESPONSE,
   ASSESSMENT_RESULTS
 };
