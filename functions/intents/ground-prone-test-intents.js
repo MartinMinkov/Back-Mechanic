@@ -1,5 +1,5 @@
 const { IN_PAIN_RESPONSE } = require('../utils/strings');
-const { INTENT_ACTIONS } = require('../utils/actions');
+const { IN_PAIN_RESPONSE_ACTIONS } = require('../utils/actions');
 
 const IMG_URL_MEDIA = 'https://i.imgur.com/pEprUGd.jpg';
 const MEDIA_SOURCE = 'https://storage.googleapis.com/backmechanic/BM-test-3-audio.mp3';
@@ -10,7 +10,7 @@ const intentSuggestions = [
 
 module.exports = {
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_ACTION]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_ACTION]: (app) => {
     let painIntensity = app.getArgument('painintensity');
     app.data.painintensity = painIntensity;
 
@@ -23,7 +23,7 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER]: (app) => {
     app.ask(app.buildRichResponse()
       .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_TIMER)
       .addMediaResponse(app.buildMediaResponse()
@@ -35,11 +35,11 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER_CHECK]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER_CHECK]: (app) => {
     app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_CHECK);
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER_CONTINUE]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER_CONTINUE]: (app) => {
     app.ask(app.buildRichResponse()
       .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_CONTINUE)
       .addMediaResponse(app.buildMediaResponse()
@@ -51,11 +51,11 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_HIP_HINGE]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_HIP_HINGE]: (app) => {
     app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_TRANSITION_HIP_HINGE);
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_COMPARISON]: (app) => {
+  [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_COMPARISON]: (app) => {
     let painIntensity = app.data.painintensity;
     let painImprovement = app.getArgument('painimprovement');
     if (painIntensity > painImprovement) {

@@ -78,8 +78,16 @@ const NOT_IN_PAIN_RESPONSE = {
   SEATED_COMPRESSION_TEST_CHAIR_NEUTRAL_SPINE_REQUEST: 'Sit with a neutral spine (left), grab the bottom of the chair ' +
   'and pull yourself down into the chair while maintaining that posture. Does this increase your pain?',
 
-  SEATED_COMPRESSION_TEST_CHAIR_FLEXED_SPINE_REQUEST: 'Now slouch like the person on the right and pull down again. ' +
-  'Does this increase your pain?'
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_REQUEST: 'Now slouch like the person on the right and pull down again. ' +
+  'Does this increase your pain?',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_FLEXION_CHIN_REQUEST: 'In the position that caused you pain, flex your neck by' +
+  ' bringing your chin down to your chest and repeat the pulling motion. Does this further increase the pain?',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_EXTENSION_CHIN_REQUEST: 'Now extend your neck as if to look up at the ' +
+  'ceiling and perform the same movement. Does this decrease the pain',
+
+  SEATED_COMPRESSION_TEST_NEXT: ''
 };
 
 const ASSESSMENT_RESULTS = {
