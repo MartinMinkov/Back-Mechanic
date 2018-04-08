@@ -16,9 +16,7 @@ module.exports = {
 
     app.ask(app.buildRichResponse()
       .addSimpleResponse(`${painIntensity}, ${IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST}`)
-      // Create a basic card and add it to the rich response
-      .addBasicCard(app.buildBasicCard(`Pain Intensity: ${painIntensity}`) // Note the two spaces before '\n' required for a
-      // line break to be rendered in the card
+      .addBasicCard(app.buildBasicCard(`Pain Intensity: ${painIntensity}`)
         .setSubtitle('Stomach Ground Test')
         .setTitle('Stomach Ground Test')
         .setImage(IMG_URL_MEDIA, 'Stomach Ground Test'))
