@@ -35,6 +35,25 @@ const IN_PAIN_RESPONSE = {
   LOWER_BACK_ASSESSMENT_REQUEST: 'Next you will be guided through an assessment to decrease the stress on the muscles ' +
     'of your lower back. Are you ready?',
 
+  STANDING_EXTENSION_TEST_REQUEST: 'You may now carefully stand up by pushing yourself up on to your hands and knees ' +
+  'and then lunge up, hinging through the hips, without flexing the spine.\n We will proceed with a test to see if ' +
+  'your pelvic instability is contributing to your pain. Say continue when you are ready.\n',
+
+  STANDING_EXTENSION_TEST_CONTINUE: 'In a standing position arch your back through the lower back. Does this aggravate ' +
+  'your pain?',
+
+  STANDING_EXTENSION_TEST_REPEAT: 'Repeat this motion but with twisting to the right and then left side. ' +
+  'Does one side cause more pain than the other?',
+
+  STANDING_EXTENSION_TEST_SIDE_REQUEST: 'Is the right side or left side worse?',
+
+  STANDING_EXTENSION_TEST_SIDE_LEFT: 'Stand on your left leg as if you were beginning to march and then arch your back ' +
+  'again. Is the pain less?',
+
+  STANDING_EXTENSION_TEST_SIDE_LEFT_RESULTS: 'We have found that stiffening the pelvis and spine will make your more ' +
+  'resilient to extension postures. For you a “feel-good” positions is where the spine is neither flexed nor extended ' +
+  'but in a neutral position. Say show me my results to get more information.',
+
   LOWER_BACK_ASSESSMENT: 'We are going to find a standing posture that relaxes the lower back muscles. Begin by ' +
   'standing in your normal posture and place your hand on the muscles of your lower back, right next to the spine ' +
   '(insert picture). If you poke your chin out or look towards the ground you will notice the muscles tighten up. ' +
@@ -51,7 +70,12 @@ const ASSESSMENT_RESULTS = {
   SPINAL_FLEXION: 'It seems you have pain with spinal flexion. This pain will be worsened with slouching, sitting, ' +
   'bending and activities such as gardening or tying your shoes. The most likely cause is a disc bulge. Laying on your ' +
   'stomach will provide pain relief and practicing the “shortstop squat” and the spinal hygiene principles will be ' +
-  'important. Would you like to hear more about ways to avoid your pain triggers?'
+  'important. Would you like to hear more about ways to avoid your pain triggers?',
+
+  FACET_JOINT_INVOLVEMENT: 'You have pain when bending backwards or when twisting linked with instability, ' +
+  'This is typically a combination of disc pathology with facet joint involvement. You need to avoid spine extension ' +
+  'and twisting. Learning to move with the hips is a crucial skill to learn. Avoid pain producing postures and replace ' +
+  'them with “feel-good” ones.'
 };
 
 module.exports = {

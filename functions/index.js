@@ -24,6 +24,7 @@ const intentWelcomeQuit = require('./intents/welcome-quit-intents');
 const intentUnknownDefault = require('./intents/default-unknown-intents');
 const intentPainIntensity = require('./intents/pain-intensity-intent');
 const intentGroundProneTest = require('./intents/ground-prone-test-intents');
+const intentStandingExentionTest = require('./intents/standing-extention-test');
 const intentPosturalAssessment = require('./intents/postural-assessment-intents');
 const intentAssessmentResults = require('./intents/assessment-results-intents');
 
@@ -47,6 +48,7 @@ exports.backmechanic = functions.https.onRequest((request, response) => {
     intentUnknownDefault,
     intentPainIntensity,
     intentGroundProneTest,
+    intentStandingExentionTest,
     intentPosturalAssessment,
     intentAssessmentResults
   );

@@ -10,7 +10,7 @@ const intentSuggestions = [
 
 module.exports = {
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_ACTION]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_ACTION]: (app) => {
     let painIntensity = app.getArgument('painintensity');
     app.data.painintensity = painIntensity;
 
@@ -25,7 +25,7 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_TIMER]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER]: (app) => {
     app.ask(app.buildRichResponse()
       .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_TIMER)
       .addMediaResponse(app.buildMediaResponse()
@@ -37,11 +37,11 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_TIMER_CHECK]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER_CHECK]: (app) => {
     app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_CHECK);
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_TIMER_CONTINUE]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_TIMER_CONTINUE]: (app) => {
     app.ask(app.buildRichResponse()
       .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_CONTINUE)
       .addMediaResponse(app.buildMediaResponse()
@@ -53,11 +53,11 @@ module.exports = {
     );
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_HIP_HINGE]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_HIP_HINGE]: (app) => {
     app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_TRANSITION_HIP_HINGE);
   },
 
-  [INTENT_ACTIONS.IN_PAIN_RESPONSE_TEST_COMPARISON]: (app) => {
+  [INTENT_ACTIONS.IN_PAIN_RESPONSE_STOMACH_GROUND_TEST_COMPARISON]: (app) => {
     let painIntensity = app.data.painintensity;
     let painImprovement = app.getArgument('painimprovement');
     if (painIntensity > painImprovement) {
