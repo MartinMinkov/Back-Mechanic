@@ -87,7 +87,15 @@ const NOT_IN_PAIN_RESPONSE = {
   SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_EXTENSION_CHIN_REQUEST: 'Now extend your neck as if to look up at the ' +
   'ceiling and perform the same movement. Does this decrease the pain',
 
-  SEATED_COMPRESSION_TEST_NEXT: ''
+  SEATED_COMPRESSION_TEST_AVOID_PAIN_POSITIONS: 'With this in mind you should avoid any seated positions like the ones that caused you ' +
+  'pain. Do not add any additional load while in this postures and practice hip-hinging. We will now move on to the next ' +
+  'test. To continue, stand up and say I’m ready.',
+
+  HEEL_DROP_TEST_REQUEST: 'While standing, rise up on to your toes and drop down on your heels - gently at first. ' +
+  'Is any pain or discomfort triggered?',
+
+  HEEL_DROP_TEST_NECK_FLEXION: 'Repeat the same movement but with your neck flexed, tucking your chin to your chest. ' +
+  'Does this further increase the pain?'
 };
 
 const ASSESSMENT_RESULTS = {
@@ -99,7 +107,11 @@ const ASSESSMENT_RESULTS = {
   FACET_JOINT_INVOLVEMENT: 'You have pain when bending backwards or when twisting linked with instability, ' +
   'This is typically a combination of disc pathology with facet joint involvement. You need to avoid spine extension ' +
   'and twisting. Learning to move with the hips is a crucial skill to learn. Avoid pain producing postures and replace ' +
-  'them with “feel-good” ones.'
+  'them with “feel-good” ones.',
+
+  NECK_FLEXION: 'Based on today’s findings it seems that you have pain with neck flexion. The nerve roots leaving the ' +
+  'spinal cord have increased their sensitivity from mechanical irritation. You should find an appropriate neck posture ' +
+  'and begin with tummy lying. Then consider nerve flossing after the corrective exercises and spinal hygiene techniques.'
 };
 
 module.exports = {

@@ -40,6 +40,7 @@ const IN_PAIN_RESPONSE_ACTIONS = {
   STANDING_EXTENSION_SIDE_LEFT: 'input.standing.extension.side.left',
 
   STANDING_EXTENSION_SIDE_LEFT_RESULTS: 'input.standing.extension.side.left.results'
+
 };
 
 const NOT_IN_PAIN_RESPONSE_ACTIONS = {
@@ -54,14 +55,22 @@ const NOT_IN_PAIN_RESPONSE_ACTIONS = {
 
   SEATED_COMPRESSION_TEST_FLEXION_SPINE_FLEXION_CHIN_REQUEST: 'input.seated.compression.test.flexion.spine.flexion.chin',
 
-  SEATED_COMPRESSION_TEST_FLEXION_SPINE_EXTENSION_CHIN_REQUEST: 'input.seated.compression.test.flexion.spine.extension.chin'
+  SEATED_COMPRESSION_TEST_FLEXION_SPINE_EXTENSION_CHIN_REQUEST: 'input.seated.compression.test.flexion.spine.extension.chin',
+
+  SEATED_COMPRESSION_TEST_NEXT_TEST_REQUEST: 'input.seated.compression.test.next.test.request',
+
+  HEEL_DROP_TEST_REQUEST: 'input.heel.drop.test.request',
+
+  HEEL_DROP_TEST_NECK_FLEXION: 'input.heel.drop.test.neck.flexion'
 };
 
 const ASSESSMENT_RESULTS_ACTIONS = {
 
   SPINAL_FLEXION: 'input.assessment.spinal.flexion',
 
-  FACET_JOINT_INVOLVEMENT: 'input.assessment.facet.joint.involvement'
+  FACET_JOINT_INVOLVEMENT: 'input.assessment.facet.joint.involvement',
+
+  NECK_FLEXION: 'input.assessment.neck.flexion'
 };
 
 module.exports = {

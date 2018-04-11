@@ -27,6 +27,7 @@ const intentGroundProneTest = require('./intents/ground-prone-test-intents');
 const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
 const intentPosturalAssessment = require('./intents/postural-assessment-intents');
 const intentSeatedCompressionTest = require('./intents/seated-compression-test-intents');
+const intentHeelDropTest = require('./intents/heel-drop-test-intents');
 const intentAssessmentResults = require('./intents/assessment-results-intents');
 
 function createActionMap () {
@@ -52,6 +53,7 @@ exports.backmechanic = functions.https.onRequest((request, response) => {
     intentStandingExtensionTest,
     intentPosturalAssessment,
     intentSeatedCompressionTest,
+    intentHeelDropTest,
     intentAssessmentResults
   );
 
