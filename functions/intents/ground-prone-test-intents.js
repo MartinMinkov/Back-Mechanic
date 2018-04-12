@@ -15,7 +15,7 @@ module.exports = {
     app.data.painintensity = painIntensity;
 
     app.ask(app.buildRichResponse()
-      .addSimpleResponse(`${painIntensity}, ${IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST}`)
+      .addSimpleResponse(`${painIntensity}, got it. ${IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST}`)
       .addBasicCard(app.buildBasicCard(`Pain Intensity: ${painIntensity}`)
         .setSubtitle('Stomach Ground Test')
         .setTitle('Stomach Ground Test')

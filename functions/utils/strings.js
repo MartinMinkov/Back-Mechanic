@@ -2,8 +2,7 @@ const GENERAL = {
   GREETING: 'Welcome to Back Mechanic, the step by step McGill Method to fix back pain.  This app is intended ' +
     'for informational and educational purposes only. Are you currently experiencing back pain?',
 
-  PAIN_REQUEST: 'To begin let’s assess your current level of pain. On a scale of 1 to 10, with 10 being high levels of ' +
-    'pain, what would you rate it currently?',
+  PAIN_REQUEST: 'To begin, how would you rate your pain on a scale from 1 to 10?',
 
   PAIN_DECREASE_REQUEST: 'Have you noticed your pain levels decrease?',
 
@@ -15,25 +14,20 @@ const GENERAL = {
 };
 
 const IN_PAIN_RESPONSE = {
-  STOMACH_GROUND_TEST_REQUEST: 'we will reassess that number after this test. Our starting position will be laying ' +
-    'on the ground on our stomach as displayed in picture 1. This may be uncomfortable at first but allow yourself 30 ' +
-    'seconds to ease into it. Say continue once you’re laying down.',
+  STOMACH_GROUND_TEST_REQUEST: 'The first test will begin with laying down on your stomach as displayed in picture #1 ' +
+  'below. This may be uncomfortable at first but allow yourself 30 seconds to ease into it. Are you ready to begin?',
 
-  STOMACH_GROUND_TEST_REQUEST_TIMER: 'Focus on your breath and allow your back to relax into the floor. ' +
-    'Press the play button to start a 30 second timer.',
+  STOMACH_GROUND_TEST_REQUEST_TIMER: 'Lay down, then tap the timer to begin the 30 seconds.',
 
-  STOMACH_GROUND_TEST_REQUEST_CHECK: 'Have you noticed your pain levels decrease?',
+  STOMACH_GROUND_TEST_REQUEST_CHECK: 'Would you say your pain levels have increased or decreased?',
 
-  STOMACH_GROUND_TEST_CONTINUE: 'Continue to lay in this position. You may prop your chin up on your fist as ' +
-    'shown in picture 2. If this position is more comfortable, maintain it. Otherwise return to the original position. ' +
-    'A time for 2 minutes and 30 seconds has begun. ',
+  STOMACH_GROUND_TEST_CONTINUE: 'Continue to lay in this position for 2 minutes and 30 seconds. You may prop your chin ' +
+  'up on your fist as shown in picture 2. If this position is more comfortable, maintain it. Otherwise return to the original position.',
 
-  STOMACH_GROUND_TEST_TRANSITION_HIP_HINGE: '3 minutes has elapsed. You may now carefully stand up by pushing ' +
-    'yourself up on to your hands and knees and then lunge up, hinging through the hips, without flexing the spine. ' +
-    'How would you rate your pain level now?',
+  STOMACH_GROUND_TEST_TRANSITION_HIP_HINGE: '3 minutes has elapsed. You may now carefully stand up, doing your best not ' +
+  'to aggravate your back. Once upright, let me know your pain level again from 1 to 10',
 
-  LOWER_BACK_ASSESSMENT_REQUEST: 'Next you will be guided through an assessment to decrease the stress on the muscles ' +
-    'of your lower back. Are you ready?',
+  LOWER_BACK_ASSESSMENT_REQUEST: 'Next we will aim to decrease the stress of the lower back muscles. Shall we continue?',
 
   STANDING_EXTENSION_TEST_REQUEST: 'You may now carefully stand up by pushing yourself up on to your hands and knees ' +
   'and then lunge up, hinging through the hips, without flexing the spine.\n We will proceed with a test to see if ' +
