@@ -61,7 +61,12 @@ const NOT_IN_PAIN_RESPONSE_ACTIONS = {
 
   HEEL_DROP_TEST_REQUEST: 'input.heel.drop.test.request',
 
-  HEEL_DROP_TEST_NECK_FLEXION: 'input.heel.drop.test.neck.flexion'
+  HEEL_DROP_TEST_NECK_FLEXION: 'input.heel.drop.test.neck.flexion',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_REQUEST: 'input.wall.plank.abdominal.bracing.request',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_CONTINUED_REQUEST: 'input.wall.plank.abdominal.bracing.continued.request'
+
 };
 
 const ASSESSMENT_RESULTS_ACTIONS = {

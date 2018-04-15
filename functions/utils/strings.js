@@ -1,6 +1,6 @@
 const GENERAL = {
   GREETING: 'Welcome to Back Mechanic, the step by step McGill Method to fix back pain.  This app is intended ' +
-    'for informational and educational purposes only. Are you currently experiencing back pain?',
+  'for informational and educational purposes only. Are you currently experiencing back pain?',
 
   PAIN_REQUEST: 'To begin, how would you rate your pain on a scale from 1 to 10?',
 
@@ -89,7 +89,15 @@ const NOT_IN_PAIN_RESPONSE = {
   'Is any pain or discomfort triggered?',
 
   HEEL_DROP_TEST_NECK_FLEXION: 'Repeat the same movement but with your neck flexed, tucking your chin to your chest. ' +
-  'Does this further increase the pain?'
+  'Does this further increase the pain?',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_REQUEST: ' Next we will try an abdominal bracing strategy to help decrease the pain.' +
+  ' To do this place your fingers a few inches to the side of your belly button. Apply a little pressure inwards and' +
+  ' contract your stomach muscles so that you are pushing your fingers out. Say repeat if you need instructions again ' +
+  'or I’m ready.',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_CONTINUED_REQUEST: 'Now rise up on your toes but before you drop back on your ' +
+  'heels, apply the abdominal bracing strategy. Does this decrease the pain or discomfort that was previously triggered?'
 };
 
 const ASSESSMENT_RESULTS = {
