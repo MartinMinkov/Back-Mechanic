@@ -1,8 +1,9 @@
 const { GENERAL } = require('../utils/strings');
-const { IN_PAIN_RESPONSE_ACTIONS } = require('../utils/actions');
+const { INTENTS } = require('../utils/intents');
 
 module.exports = {
-  [IN_PAIN_RESPONSE_ACTIONS.PAIN_INTENSITY_ACTION]: (app) => {
-    app.ask(GENERAL.PAIN_REQUEST);
+  [INTENTS.PAIN_INTENSITY_REQUEST]: (conv) => {
+    conv.contexts.set('pain-intensity', 1);
+    conv.ask(GENERAL.PAIN_REQUEST);
   }
 };

@@ -14,9 +14,9 @@
 'use strict';
 
 const intentWelcomeQuit = require('./intents/welcome-quit-intents');
-// const intentUnknownDefault = require('./intents/default-unknown-intents');
-// const intentPainIntensity = require('./intents/pain-intensity-intent');
-// const intentGroundProneTest = require('./intents/ground-prone-test-intents');
+const intentUnknownDefault = require('./intents/default-unknown-intents');
+const intentPainIntensity = require('./intents/pain-intensity-intent');
+const intentSeatedCompression = require('./intents/seated-compression-test-intents');
 // const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
 // const intentPosturalAssessment = require('./intents/postural-assessment-intents');
 // const intentSeatedCompressionTest = require('./intents/seated-compression-test-intents');
@@ -36,7 +36,10 @@ function addIntents (...args) {
 }
 
 addIntents(
-  intentWelcomeQuit
+  intentWelcomeQuit,
+  intentUnknownDefault,
+  intentPainIntensity,
+  intentSeatedCompression
 );
 
 module.exports = app;
