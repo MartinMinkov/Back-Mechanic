@@ -1,53 +1,69 @@
-const {IN_PAIN_RESPONSE} = require('../utils/strings');
-const {INTENTS} = require('../utils/intents');
+const { IN_PAIN_RESPONSE } = require('../utils/strings');
+const { INTENTS } = require('../utils/intents');
+const { CONTEXTS } = require('../utils/contexts');
+
+const {
+  BasicCard,
+  Image,
+  MediaObject,
+  Suggestions
+} = require('actions-on-google');
 
 const IMG_URL_MEDIA = 'https://i.imgur.com/pEprUGd.jpg';
-// const MEDIA_SOURCE = 'https://storage.googleapis.com/backmechanic/BM-test-3-audio.mp3';
+const MEDIA_SOURCE = 'https://storage.googleapis.com/backmechanic/BM-test-3-audio.mp3';
 
 module.exports = {
 
-  [INTENTS.STOMACH_GROUND_TEST_REQUEST]: (conv) => {
-    let painIntensity = conv.arguments.get('painintensity');
-    conv.data.painintensity = painIntensity;
+  [INTENTS.STOMACH_GROUND_TEST_REQUEST]: (conv, {painintensity}) => {
+    conv.contexts.set(CONTEXTS.STOMACH_GROUND_TEST_TIMER, 1);
+    conv.data.painintensity = painintensity;
 
+    conv.ask(`${painintensity}, got it. ${IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST}`);
     conv.ask(new BasicCard({
-      text: `${painIntensity}, got it. ${IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST}`,
-      subtitle: 'Pain Intensity',
-      title: `Pain Intensity: ${painIntensity}`,
+      text: `Pain Intensity: ${painintensity}`,
+      subtitle: 'Subtitle: Stomach Ground Test',
+      title: 'Title: Stomach Ground Test',
       image: new Image({
         url: IMG_URL_MEDIA,
         alt: 'Image alternate text'
       })
     }));
-  }
+  },
 
-  // [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER]: (app) => {
-  //   app.ask(app.buildRichResponse()
-  //     .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_TIMER)
-  //     .addMediaResponse(app.buildMediaResponse()
-  //       .addMediaObjects(
-  //         app.buildMediaObject('30 second counter', MEDIA_SOURCE)
-  //           .setImage(IMG_URL_MEDIA, app.Media.ImageType.ICON)
-  //       ))
-  //     .addSuggestions(intentSuggestions)
-  //   );
-  // },
-  //
-  // [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER_CHECK]: (app) => {
-  //   app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_CHECK);
-  // },
-  //
-  // [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_TIMER_CONTINUE]: (app) => {
-  //   app.ask(app.buildRichResponse()
-  //     .addSimpleResponse(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_CONTINUE)
-  //     .addMediaResponse(app.buildMediaResponse()
-  //       .addMediaObjects(
-  //         app.buildMediaObject('2 min 30 second counter', MEDIA_SOURCE)
-  //           .setImage(IMG_URL_MEDIA, app.Media.ImageType.ICON)
-  //       ))
-  //     .addSuggestions(intentSuggestions)
-  //   );
-  // },
+  [INTENTS.STOMACH_GROUND_TEST_REQUEST_TIMER]: (conv) => {
+    conv.contexts.set(CONTEXTS.STOMACH_GROUND_TEST_TIMER, 1);
+    conv.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_TIMER);
+    conv.ask(new MediaObject({
+      name: '30 Second Timer',
+      url: MEDIA_SOURCE,
+      description: '30 Second Timer',
+      icon: new Image({
+        url: IMG_URL_MEDIA,
+        alt: 'Media icon'
+      })
+    }));
+    conv.ask(new Suggestions('Test Suggestion'));
+  },
+
+  [INTENTS.STOMACH_GROUND_TEST_REQUEST_TIMER_CHECK]: (conv) => {
+    conv.contexts.set(CONTEXTS.STOMACH_GROUND_TEST_TIMER_END, 1);
+    conv.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_REQUEST_CHECK);
+  },
+
+  [INTENTS.STOMACH_GROUND_TEST_REQUEST_TIMER_CONTINUE]: (conv) => {
+    conv.contexts.set(CONTEXTS.STOMACH_GROUND_TEST_TIMER_END_HIP_HINGE, 1);
+    conv.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_CONTINUE);
+    conv.ask(new MediaObject({
+      name: '2 Minute 30 Second Timer',
+      url: MEDIA_SOURCE,
+      description: '2 Minute 30 Second Timer',
+      icon: new Image({
+        url: IMG_URL_MEDIA,
+        alt: 'Media icon'
+      })
+    }));
+    conv.ask(new Suggestions('Test Suggestion'));
+  }
   //
   // [IN_PAIN_RESPONSE_ACTIONS.STOMACH_GROUND_TEST_HIP_HINGE]: (app) => {
   //   app.ask(IN_PAIN_RESPONSE.STOMACH_GROUND_TEST_TRANSITION_HIP_HINGE);

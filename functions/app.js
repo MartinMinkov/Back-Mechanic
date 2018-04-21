@@ -16,7 +16,7 @@
 const intentWelcomeQuit = require('./intents/welcome-quit-intents');
 const intentUnknownDefault = require('./intents/default-unknown-intents');
 const intentPainIntensity = require('./intents/pain-intensity-intent');
-const intentSeatedCompression = require('./intents/seated-compression-test-intents');
+const intentStomachGroundTest = require('./intents/stomach-ground-test-intents');
 // const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
 // const intentPosturalAssessment = require('./intents/postural-assessment-intents');
 // const intentSeatedCompressionTest = require('./intents/seated-compression-test-intents');
@@ -39,7 +39,7 @@ addIntents(
   intentWelcomeQuit,
   intentUnknownDefault,
   intentPainIntensity,
-  intentSeatedCompression
+  intentStomachGroundTest
 );
 
 module.exports = app;
