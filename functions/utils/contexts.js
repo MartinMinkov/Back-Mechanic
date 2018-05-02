@@ -26,6 +26,8 @@ const CONTEXTS = {
 
   HEEL_DROP_TEST_REQUEST: 'heel-drop-test-request',
 
+  HEEL_DROP_TEST_NECK_FLEXION: 'heel-drop-test-neck-flexion',
+
   SEATED_COMPRESSION_NEUTRAL_SPINE_TEST: 'seated-compression-neutral-spine-test',
 
   SEATED_COMPRESSION_FLEXED_SPINE_TEST: 'seated-compression-flexed-spine-test',
@@ -34,9 +36,15 @@ const CONTEXTS = {
 
   SEATED_COMPRESSION_TEST_NEXT: 'seated-compression-next-test',
 
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_REQUEST: 'wall-plank-test-abdominal-bracing-request',
+
+  WALL_PLANK_TEST_CONTINUE: 'wall-plank-test-continued',
+
   POSTURAL_ASSESSMENT: 'postural-assessment',
 
-  ASSESSMENT_RESULTS: 'assessment-results '
+  ASSESSMENT_RESULTS: 'assessment-results ',
+
+  ASSESSMENT_RESULTS_NECK_FLEXION: 'assessment-results-neck-flexion'
 };
 
 module.exports = {

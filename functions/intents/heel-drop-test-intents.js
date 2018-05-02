@@ -1,20 +1,26 @@
-const {NOT_IN_PAIN_RESPONSE} = require('../utils/strings');
-const {NOT_IN_PAIN_RESPONSE_ACTIONS} = require('../utils/actions');
+const { NOT_IN_PAIN_RESPONSE } = require('../utils/strings');
+const { INTENTS } = require('../utils/intents');
+const { CONTEXTS } = require('../utils/contexts');
 
 module.exports = {
-  [NOT_IN_PAIN_RESPONSE_ACTIONS.HEEL_DROP_TEST_REQUEST]: (app) => {
-    const seatedCompressionAnswer = app.getArgument('seated-compression-answer');
-    const seatedCompressionContext = app.getContext('seated-compression-flexed-spine-chin-test');
+  [INTENTS.HEEL_DROP_TEST_REQUEST]: (conv, { seatedCompressionAnswer }) => {
+    const seatedCompressionContext = conv.contexts.get(CONTEXTS.SEATED_COMPRESSION_FLEXED_SPINE_CHIN_TEST);
+
+    console.log('Seated Compression Answer: ' + seatedCompressionAnswer);
+    console.log('Seated Compression Context: ' + seatedCompressionContext);
 
     if (seatedCompressionAnswer === 'no' && seatedCompressionContext) {
-      app.setContext('wall-plank-test-abdominal-bracing-request', 1);
+      console.log('LOOKING FOR THIS INSIDE');
+      conv.contexts.set(CONTEXTS.WALL_PLANK_TEST_ABDOMINAL_BRACING_REQUEST, 1);
     } else {
-      app.setContext('heel-drop-test-neck-flexion', 1);
+      conv.contexts.set(CONTEXTS.HEEL_DROP_TEST_NECK_FLEXION, 1);
     }
-    app.ask(NOT_IN_PAIN_RESPONSE.HEEL_DROP_TEST_REQUEST);
+    conv.ask(NOT_IN_PAIN_RESPONSE.HEEL_DROP_TEST_REQUEST);
   },
 
-  [NOT_IN_PAIN_RESPONSE_ACTIONS.HEEL_DROP_TEST_NECK_FLEXION]: (app) => {
-    app.ask(NOT_IN_PAIN_RESPONSE.HEEL_DROP_TEST_NECK_FLEXION);
+  [INTENTS.HEEL_DROP_TEST_NECK_FLEXION]: (conv) => {
+    conv.contexts.set(CONTEXTS.ASSESSMENT_RESULTS_NECK_FLEXION, 1);
+
+    conv.ask(NOT_IN_PAIN_RESPONSE.HEEL_DROP_TEST_NECK_FLEXION);
   }
 };

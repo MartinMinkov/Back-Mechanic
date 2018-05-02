@@ -13,6 +13,7 @@ module.exports = {
 
   [INTENTS.SEATED_COMPRESSION_REST_REQUEST]: (conv) => {
     conv.contexts.set(CONTEXTS.SEATED_COMPRESSION_TEST, 1);
+    conv.contexts.set(CONTEXTS.HEEL_DROP_TEST_REQUEST, 1);
     conv.ask(NOT_IN_PAIN_RESPONSE.SEATED_COMPRESSION_TEST_REQUEST);
   },
 

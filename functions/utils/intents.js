@@ -46,9 +46,19 @@ const INTENTS = {
 
   SEATED_COMPRESSION_TEST_NEXT_TEST: 'Seated Compression Chair - Next Test',
 
+  HEEL_DROP_TEST_REQUEST: 'Heel Drop Test Request',
+
+  HEEL_DROP_TEST_NECK_FLEXION: 'Heel Drop Test - Neck Flexion',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_REQUEST: 'Wall Plank Test - Abdominal Bracing Request',
+
+  WALL_PLANK_TEST_ABDOMINAL_BRACING_CONTINUED_REQUEST: 'Wall Plank Test - Abdominal Bracing Continued Request',
+
   ASSESSMENT_RESULTS_SPINAL_FLEXION: 'Assessment Results - Spinal Flexion',
 
-  ASSESSMENT_RESULTS_FACET_JOIN_INVOLVEMENT: 'Assessment Results - Facet Joint Involvement'
+  ASSESSMENT_RESULTS_FACET_JOIN_INVOLVEMENT: 'Assessment Results - Facet Joint Involvement',
+
+  ASSESSMENT_RESULTS_NECK_FLEXION: 'Assessment Results - Neck Flexion'
 };
 
 module.exports = {
