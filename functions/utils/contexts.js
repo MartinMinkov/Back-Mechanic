@@ -22,6 +22,18 @@ const CONTEXTS = {
 
   STANDING_EXTENSION_LEFT_RIGHT_RESULTS: 'standing-extension-left-right-results',
 
+  SEATED_COMPRESSION_TEST: 'seated-compression-test',
+
+  HEEL_DROP_TEST_REQUEST: 'heel-drop-test-request',
+
+  SEATED_COMPRESSION_NEUTRAL_SPINE_TEST: 'seated-compression-neutral-spine-test',
+
+  SEATED_COMPRESSION_FLEXED_SPINE_TEST: 'seated-compression-flexed-spine-test',
+
+  SEATED_COMPRESSION_FLEXED_SPINE_CHIN_TEST: 'seated-compression-flexed-spine-chin-test',
+
+  SEATED_COMPRESSION_TEST_NEXT: 'seated-compression-next-test',
+
   POSTURAL_ASSESSMENT: 'postural-assessment',
 
   ASSESSMENT_RESULTS: 'assessment-results '

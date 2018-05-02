@@ -32,6 +32,20 @@ const INTENTS = {
 
   STANDING_EXTENSION_TEST_SIDE_LEFT_RIGHT_RESULTS: 'Standing Extension Test - Side Left/Right Results',
 
+  SEATED_COMPRESSION_REST_REQUEST: 'Seated Compression Test -  Request',
+
+  SEATED_COMPRESSION_TEST_CHAIR_AVAILABLE: 'Seated Compression Test - Chair Available',
+
+  SEATED_COMPRESSION_TEST_CHAIR_NEUTRAL_SPINE_TEST: 'Seated Compression Chair - Neutral Spine Test',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_TEST: 'Seated Compression Chair - Flexion Spine Test',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_CHIN_FLEXION_TEST: 'Seated Compression Chair - Spine Flexion Chin Flexion Test',
+
+  SEATED_COMPRESSION_TEST_CHAIR_FLEXION_SPINE_CHIN_EXTENSION_TEST: 'Seated Compression Chair - Flexion Spine Chin Extension Test',
+
+  SEATED_COMPRESSION_TEST_NEXT_TEST: 'Seated Compression Chair - Next Test',
+
   ASSESSMENT_RESULTS_SPINAL_FLEXION: 'Assessment Results - Spinal Flexion',
 
   ASSESSMENT_RESULTS_FACET_JOIN_INVOLVEMENT: 'Assessment Results - Facet Joint Involvement'
