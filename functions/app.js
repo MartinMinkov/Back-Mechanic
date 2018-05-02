@@ -17,12 +17,12 @@ const intentWelcomeQuit = require('./intents/welcome-quit-intents');
 const intentUnknownDefault = require('./intents/default-unknown-intents');
 const intentPainIntensity = require('./intents/pain-intensity-intent');
 const intentStomachGroundTest = require('./intents/stomach-ground-test-intents');
-// const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
-// const intentPosturalAssessment = require('./intents/postural-assessment-intents');
+const intentStandingExtensionTest = require('./intents/standing-extension-test-intents');
+const intentPosturalAssessment = require('./intents/postural-assessment-intents');
 // const intentSeatedCompressionTest = require('./intents/seated-compression-test-intents');
 // const intentHeelDropTest = require('./intents/heel-drop-test-intents');
 // const intentWallPlankTest = require('./intents/wall-plank-test-intents');
-// const intentAssessmentResults = require('./intents/assessment-results-intents');
+const intentAssessmentResults = require('./intents/assessment-results-intents');
 
 const app = require('actions-on-google').dialogflow();
 
@@ -39,7 +39,11 @@ addIntents(
   intentWelcomeQuit,
   intentUnknownDefault,
   intentPainIntensity,
-  intentStomachGroundTest
+  intentStomachGroundTest,
+  intentStandingExtensionTest,
+  intentPosturalAssessment,
+  intentAssessmentResults
+
 );
 
 module.exports = app;
